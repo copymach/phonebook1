@@ -9,6 +9,14 @@ public class TestDao {
 
 	      PhoneDao phoneDao= new PhoneDao();
 	      
+
+
+	    PhoneDao phoneDao = new PhoneDao();
+	    List<PersonVo> personList =phoneDao.PersonSelect();
+	    List<PersonVo> personList = phoneDao.getPersonList();
+	    List<PersonVo> personList = new ArrayList<PersonVo>();
+	      
+	      
 	      List personList = phoneDao.PersonSelect();
 	      
 	      List<PersonVo> personList  = phoneDao.PersonSelect();

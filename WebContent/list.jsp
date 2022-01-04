@@ -7,9 +7,8 @@
 
 <%
 PhoneDao phoneDao = new PhoneDao();
-List<PersonVo> personList =phoneDao.PersonSelect();
-//List<PersonVo> personList = phoneDao.getPersonList();
-//List<PersonVo> personList = new ArrayList<PersonVo>();
+List<PersonVo> personList = phoneDao.getList();
+//List<PersonVo> personList = phoneDao.PersonSelect();
 %>
 <!DOCTYPE html>
 <html>
@@ -30,16 +29,15 @@ List<PersonVo> personList =phoneDao.PersonSelect();
 	<table border="1">
 		<tr>
 			<td>이름(name)</td>
-			<td>정우성</td>
 			<td><%=personList.get(i).getName()%></td>
 		</tr>
 		<tr>
 			<td>핸드폰(hp)</td>
-			<td>010-1111-9898</td>
+			<td><%=personList.get(i).getHp()%></td>
 		</tr>
 		<tr>
 			<td>회사(company)</td>
-			<td>02-8541-2321</td>
+			<td><%=personList.get(i).getCompany()%></td>
 		</tr>
 	</table>
 	<br>
