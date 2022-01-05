@@ -10,11 +10,14 @@ PhoneDao phoneDao= new PhoneDao();
 String name = request.getParameter("name");
 String hp = request.getParameter("hp");
 String company = request.getParameter("company");
+// id 는 string이어서 숫자로 쓰기 위해 형변환이 필요
 int id = Integer.parseInt(request.getParameter("id"));
 
 
 //전송된 값을 vo객체로 정리하기
 PersonVo personVo = new PersonVo(id, name, hp, company);
+
+//에러 탐지용 tostring
 //System.out.println(personVo.toString());
 
 

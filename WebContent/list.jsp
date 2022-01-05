@@ -45,8 +45,7 @@ List<PersonVo> personList = phoneDao.getList();
 			<td><%=personList.get(i).getPersonId()%></td>
 		</tr>
 		<tr>
-		
-			<td><a href=./modify.jsp?id=<%=personList.get(i).getPersonId()%>&name=<%=personList.get(i).getName()%>&hp=<%=personList.get(i).getHp()%>&company=<%=personList.get(i).getCompany()%>>수정</a></td>
+			<td><a href=./modify.jsp?id=<%=personList.get(i).getPersonId()%>>수정</a></td>
 			<td><a href=./delete.jsp?id=<%=personList.get(i).getPersonId()%>>삭제</a></td>
 		</tr>
 	</table>
@@ -55,5 +54,6 @@ List<PersonVo> personList = phoneDao.getList();
 	}
 	%>
 	<a href="http://localhost:8088/phonebook1/writeForm.jsp">전화번호 등록폼</a>
+	<!--기존 getPerson 쓰기전 수정버튼용 링크 <a href=./modify.jsp?id=  [%=personList.get(i).getPersonId()%>&name= [%=personList.get(i).getName()%>&hp= [%=personList.get(i).getHp()%>&company= [%=personList.get(i).getCompany()%>>수정</a> -->
 </body>
 </html>
