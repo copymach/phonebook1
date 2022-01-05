@@ -12,12 +12,14 @@
 	<p>http://localhost:8088/phonebook1/writeForm.jsp</p>
 	<p>전화번호를 등록하려면 아래 항목을 기입하고 등록 버튼을 누르세요</p>
 
-	<form action="" method="">
-		이름(name) : <input type="text" name="" value=""> <br>
-		핸드폰(hp) : <input type="text" name="" value=""> <br>
-		회사(company) <input type="text" name="" value=""> <br>
+	<form action="./insert.jsp" method="get">
+		<!-- get방식으로 하면 파라미터가 보임 post방식으로 하면 안보임 -->
+		이름(name) : <input type="text" name="name" value=""> <br>
+		핸드폰(hp) : <input type="text" name="hp" value=""> <br>
+		회사(company) <input type="text" name="company" value=""> <br>
 		<button type="submit">전송</button>
 	</form>
 	<a href="http://localhost:8088/phonebook1/list.jsp">전화번호 등록폼</a>
+	<a href="./list.jsp">전화번호 등록폼</a>
 </body>
 </html>

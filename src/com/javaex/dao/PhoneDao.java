@@ -146,7 +146,8 @@ public class PhoneDao {
 			// 3. SQL문 준비 / 바인딩 / 실행
 			String query = "";
 			query += " UPDATE person ";
-			query += " SET	hp = ?, ";
+			query += " SET	name = ?, ";
+			query += " 		hp = ?, ";
 			query += " 		company = ? ";
 			query += " WHERE person_id = ? ";
 
@@ -156,9 +157,10 @@ public class PhoneDao {
 			pstmt = conn.prepareStatement(query);
 
 //			바인딩
-			pstmt.setString(1, personVo.getHp());
-			pstmt.setString(2, personVo.getCompany());
-			pstmt.setInt(3, personVo.getPersonId());
+			pstmt.setString(1, personVo.getName());
+			pstmt.setString(2, personVo.getHp());
+			pstmt.setString(3, personVo.getCompany());
+			pstmt.setInt(4, personVo.getPersonId());
 
 //			실행
 			int count = pstmt.executeUpdate();
@@ -237,7 +239,7 @@ public class PhoneDao {
 		List<PersonVo> personList = new ArrayList<PersonVo>();
 
 		this.getConnection();
-		
+
 		Scanner sc = new Scanner(System.in); // 루프 오류방지 close 는 하지 않는다
 		sc.nextLine(); // 개행문자 처리
 		System.out.println("<5.검색>");
@@ -256,7 +258,7 @@ public class PhoneDao {
 //			select first_name, last_name, salary
 //			from employees
 //			where first_name like 'L%';
-			
+
 			pstmt = conn.prepareStatement(query);
 
 			pstmt.setString(1, "%" + search + "%");
@@ -287,7 +289,7 @@ public class PhoneDao {
 		return personList;
 	} // personSearch 종료
 
-// 겟리스트 데이터 (select 에서 출력 부분 빼버림)
+//	겟리스트 데이터 (select 에서 출력 부분 빼버림)	셀렉터만 따로 메서드로 빼버림 
 	public List<PersonVo> getList() {
 		List<PersonVo> personList = new ArrayList<PersonVo>();
 
@@ -323,4 +325,46 @@ public class PhoneDao {
 		return personList;
 	} // getList 종료
 
+
+	public void printList() {
+
+		for (PersonVo personvo : this.personSearch()) {
+			personvo.showInfo();
+		}
+	} // printList 종료
+
+/*	//  출력
+	public PersonVo getPerson(int index) {
+		
+		getConnection();
+
+		try {
+			String query = "";
+			query += " select   person_id pid ";
+			query += " from person ";
+
+			pstmt = conn.prepareStatement(query);
+
+			int personId = rs.getInt("pid");
+
+//			문자열을 쿼리문으로 만들기
+			pstmt = conn.prepareStatement(query);
+
+//			바인딩
+			pstmt.setInt(1, index);
+
+//			실행
+			int count = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			System.out.println("error:" + e);
+		}
+
+//		5.자원 닫기
+		close();
+		
+		return personId;
+		
+	} // getPerson 종료
+*/	
 }

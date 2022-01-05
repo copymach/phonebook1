@@ -8,13 +8,14 @@
 <%
 PhoneDao phoneDao = new PhoneDao();
 List<PersonVo> personList = phoneDao.getList();
+//List<PersonVo> personList = phoneDao.printList();
 //List<PersonVo> personList = phoneDao.PersonSelect();
 %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>[PhoneBook1]</title>
 </head>
 <body>
 	<h1>[PhoneBook1]</h1>
@@ -38,6 +39,15 @@ List<PersonVo> personList = phoneDao.getList();
 		<tr>
 			<td>회사(company)</td>
 			<td><%=personList.get(i).getCompany()%></td>
+		</tr>
+				<tr>
+			<td>코드(id)</td>
+			<td><%=personList.get(i).getPersonId()%></td>
+		</tr>
+		<tr>
+		
+			<td><a href=./modify.jsp?id=<%=personList.get(i).getPersonId()%>&name=<%=personList.get(i).getName()%>&hp=<%=personList.get(i).getHp()%>&company=<%=personList.get(i).getCompany()%>>수정</a></td>
+			<td><a href=./delete.jsp?id=<%=personList.get(i).getPersonId()%>>삭제</a></td>
 		</tr>
 	</table>
 	<br>
