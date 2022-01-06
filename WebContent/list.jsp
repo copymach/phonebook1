@@ -20,7 +20,7 @@ List<PersonVo> personList = phoneDao.getList();
 <body>
 	<h1>[PhoneBook1]</h1>
 	<h1>리스트 페이지</h1>
-	<h2>http://localhost:8088/phonebook1/list.jsp</h2>
+	<h2><a href=http://localhost:8088/phonebook1/list.jsp>http://localhost:8088/phonebook1/list.jsp</a></h2>
 	<p>입력한 정보 내역입니다.</p>
 
 	<%
@@ -53,7 +53,7 @@ List<PersonVo> personList = phoneDao.getList();
 	<%
 	}
 	%>
-	<a href="http://localhost:8088/phonebook1/writeForm.jsp">전화번호 등록폼</a>
+	<a href="http://localhost:8088/phonebook1/writeForm.jsp">전화번호 추가하기</a>
 	<!--기존 getPerson 쓰기전 수정버튼용 링크 <a href=./modify.jsp?id=  [%=personList.get(i).getPersonId()%>&name= [%=personList.get(i).getName()%>&hp= [%=personList.get(i).getHp()%>&company= [%=personList.get(i).getCompany()%>>수정</a> -->
 </body>
 </html>

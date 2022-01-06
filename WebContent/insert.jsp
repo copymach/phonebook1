@@ -9,6 +9,8 @@ String name = request.getParameter("name");
 String hp = request.getParameter("hp");
 String company = request.getParameter("company");
 
+//보이지않지만 getParameter() 이라는 메서드가 있다
+
 //전송된 값을 vo객체로 만들기
 PersonVo personVo = new PersonVo(name, hp, company);
 

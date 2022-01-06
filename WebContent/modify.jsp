@@ -8,7 +8,6 @@
 //PhoneDao에서 getPerson으로 수정 정보 출력
 //리스트에서 받아온 id를 숫자로 바꿔준다
 int personId = Integer.parseInt(request.getParameter("id"));
-//int id = Integer.parseInt(request.getParameter("id"));
 
 PhoneDao phoneDao = new PhoneDao();
 
